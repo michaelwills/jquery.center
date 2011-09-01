@@ -1,7 +1,7 @@
 /*! Copyright 2011, Ben Lin (http://dreamerslab.com/)
 * Licensed under the MIT License (LICENSE.txt).
 *
-* Version: 1.0.1
+* Version: 1.0.1.1
 *
 * Requires: jQuery 1.2.6+
 */
@@ -20,7 +20,8 @@
       configs = $.extend({
         against : 'window',
         top : false,
-        topPercentage : 0.5
+        topPercentage : 0.5,
+				updateOnResize: true
       }, options );
     
       centerize = function(){
@@ -49,7 +50,9 @@
     
       // apply centerization
       centerize();
-      $w.resize( centerize );
+			if (configs.updateOnResize) {
+				$w.resize( centerize );
+			}
     });
   };
 })( jQuery, window );
