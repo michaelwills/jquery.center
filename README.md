@@ -45,6 +45,12 @@ This simple plugin helps you centralize your DOM element against their parent el
   - default value: 0.5
   - possible value: 0.1, 0.4, 0.8 ...
 
+#### updateOnResize
+  - description: enable or disable automatic centering on window resize
+  - data type: boolean
+  - default value: true
+  - possible value: true, false
+
 ## Usage
 > Example code:
       
@@ -63,6 +69,9 @@ This simple plugin helps you centralize your DOM element against their parent el
         against : '.some-target-element',
         topPercentage : 0.4
       });
+
+      // centralize #some-element against the window but do not update when the window resizes
+      $( '#some-element' ).center({updateOnResize: false});
 
 ## Demo
  - Please see demo.html
